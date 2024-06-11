@@ -26,6 +26,6 @@ res_2 = list(filter(not_odd, map(sqr_, list_)))
 print(res_1, res_2, sep='\n')
 
 res_3 = list(filter(lambda x: x % 2, map(lambda x: x ** 2, list_)))
-l_str = lambda x: x ** 2
-res_4 = [l_str(x) for x in list_ if x % 2]
+l_sqr = lambda x: x ** 2
+res_4 = [l_sqr(x) for x in list_ if x % 2]
 print(res_3, res_4, sep='\n')
