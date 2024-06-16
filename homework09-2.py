@@ -83,3 +83,5 @@ class Rect:
 print('\n\033[93mЗадача 3: Вызываемые объекты\033[0m')
 rect_ = Rect(2, 4)
 print(f'Стороны: {rect_.get_side()}', f'Площадь: {rect_()}', sep='\n')
+
+# print(help(rect_))
