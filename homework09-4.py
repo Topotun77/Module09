@@ -33,6 +33,11 @@ a = all_variants(1234)
 for i in a:
     print(i)
 
+print('\nall_variants([1, 2])')
+a = all_variants([1, 2])
+for i in a:
+    print(i)
+
 print("\nall_variants_2('abc')")
 a = all_variants_2('abc')
 for i in a:
@@ -40,5 +45,10 @@ for i in a:
 
 print('\nall_variants_2(123)')
 a = all_variants_2(123)
+for i in a:
+    print(i)
+
+print('\nall_variants_2([1, 2, 3])')
+a = all_variants_2([1, 2, 3])
 for i in a:
     print(i)
