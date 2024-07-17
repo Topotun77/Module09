@@ -37,3 +37,31 @@ try:
 except TypeError as ex:
     print(f'Неверный тип данных, ожидался список из переменных типа int или float\n'
           f'{list_}\n{ex.args}')
+
+
+# Новая версия задания
+# 1. В переменную first_result запишите список созданный при помощи сборки состоящий из длин
+# строк списка first_strings, при условии, что длина строк не менее 5 символов.
+# 2. В переменную second_result запишите список созданный при помощи сборки состоящий из пар
+# слов(кортежей) одинаковой длины. Каждое слово из списка first_strings должно сравниваться с
+# каждым из second_strings. (два цикла)
+# 3. В переменную third_result запишите словарь созданный при помощи сборки, где парой
+# ключ-значение будет строка-длина строки. Значения строк будут перебираться из объединённых
+# вместе списков first_strings и second_strings. Условие записи пары в словарь - чётная длина
+# строки.
+
+print('\nНовая версия задания')
+
+first_strings = ['Elon', 'Musk', 'Programmer', 'Monitors', 'Variable']
+second_strings = ['Task', 'Git', 'Comprehension', 'Java', 'Computer', 'Assembler']
+
+first_result = list(map(lambda x: len(x), first_strings))
+first_result2 = [len(x) for x in first_strings]
+
+second_result = [(i, j) for i in first_strings for j in second_strings if len(i) == len(j)]
+
+third_result = dict([(i, len(i)) for i in first_strings+second_strings if not (len(i) % 2)])
+
+print(first_result, first_result2)
+print(second_result)
+print(third_result)
