@@ -85,3 +85,26 @@ rect_ = Rect(2, 4)
 print(f'Стороны: {rect_.get_side()}', f'Площадь: {rect_()}', sep='\n')
 
 # print(help(rect_))
+
+# Задача новая:
+# Дано 2 списка:
+# first = ['Strings', 'Student', 'Computers']
+# second = ['Строка', 'Урбан', 'Компьютер']
+# Необходимо создать 2 генераторных сборки:
+# 1. В переменную first_result запишите генераторную сборку, которая высчитывает разницу длин строк
+# из списков first и second, если их длины не равны. Для перебора строк попарно из двух списков
+# используйте функцию zip.
+# 2. В переменную second_result запишите генераторную сборку, которая содержит результаты сравнения
+# строк в одинаковых позициях из списков first и second. Составьте эту сборку НЕ используя функцию
+# zip. Используйте функции range и len.
+
+print('\nНовая версия задания')
+
+first = ['Strings', 'Student', 'Computers']
+second = ['Строка', 'Урбан', 'Компьютер']
+
+first_result = (len(i[0]) - len(i[1]) for i in zip(first, second) if len(i[0]) != len(i[1]))
+print(list(first_result))
+
+second_result = (len(first[i]) == len(second[i]) for i in range(len(first)))
+print(list(second_result))
